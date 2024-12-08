@@ -1,0 +1,30 @@
+﻿@* @model List<FoodDeliveryReservation.Models.Cart>
+
+<div>
+    @if (Model != null && Model.Any())
+
+    {
+        <ul>
+            @foreach (var n in Model)
+
+            {
+                <li>@n.cartId</li>
+            }
+        </ul>
+    }
+
+    else
+
+    {
+        <p>No notes available.</p>
+    }
+</div>
+
+
+ *@
+
+<form method="post" action="/Cart/AddToCart">
+    <label> Add to Cart</label>
+    <input type="text" name="NoteText" />
+    <input type="submit" value="addToCart" />
+</form>
